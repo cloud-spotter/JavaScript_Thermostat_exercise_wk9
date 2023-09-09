@@ -31,35 +31,35 @@ class Thermostat {
         //  maximum temperature: number
         } 
 
-    const getTemperature() = () => {
+    getTemperature() {
         // Returns: temperature
         // Side-effects: none
     }
     
-    const up() = () => {
+    up() {
         // Returns: the new temperature
         /* Side-effects: Changes the value of the temperature property;
         Throws an exception if temperature is already at maximum */
     }
 
-    const down() = () => {
+    down() {
         // Returns: the new temperature
         /* Side-effects: Changes the value of the temperature property;
         Throws an exception if temperature is already at minimum */
     }
 
-    const setPowerSavingMode() = () => {
+    setPowerSavingMode() {
         // Returns: undefined
         /* Side-effects: changes the value of the power saving mode property;
         sets the value of the maximum temperature property */
     }
 
-    const reset() = () => {
+    reset() {
     // Returns: undefined
     // Side-effects: changes the value of the temperature property to 20
     }
 
-    const checkEnergyUsage = () => {
+    checkEnergyUsage() {
         // Returns: a string statement (low-usage/medium-usage/high-usage)
         // Side-effects: none
     }
@@ -73,7 +73,7 @@ _Make a list of examples of how the class will behave in different situations._
 ``` javascript
 // EXAMPLE
 
-const thermostat = new Thermostat();
+ thermostat = new Thermostat();
 
 thermostat.getTemperature(); // should return 20
 
