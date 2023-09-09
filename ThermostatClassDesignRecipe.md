@@ -4,14 +4,14 @@
 
 You'll build, test-driving your code, a simple program to manage a thermostat. Here is the specification for the initial MVP of the program:
 
-The Thermostat starts with an initial temperature of 20 degrees
-You can increase the temperature with an up method
-You can decrease the temperature with a down method
-The minimum possible temperature is 10 degrees
-The Power saving mode is on by default but it can also be turned off
-If power saving mode is on, the maximum temperature is 25 degrees
-If power saving mode is off, the maximum temperature is 32 degrees
-You can reset the temperature to 20 with a reset method
+The Thermostat starts with an initial temperature of 20 degrees.<br>
+You can increase the temperature with an up method.<br>
+You can decrease the temperature with a down method.<br>
+The minimum possible temperature is 10 degrees.<br>
+The Power saving mode is on by default but it can also be turned off.<br>
+If power saving mode is on, the maximum temperature is 25 degrees.<br>
+If power saving mode is off, the maximum temperature is 32 degrees.<br>
+You can reset the temperature to 20 with a reset method.<br>
 You can ask about the thermostat's current energy usage: < 18 is low-usage, <= 25 is medium-usage, anything else is high-usage.
 
 ## 2. Design the Class Interface
@@ -50,12 +50,8 @@ class Thermostat {
 
     const setPowerSavingMode() = () => {
         // Returns: undefined
-        // Side-effects: changes the value of the power saving mode property
-    }
-
-    const managePowerSaving() = () => {
-        // Returns: undefined
-        // Side-effects: sets the value of the maximum temperature property
+        /* Side-effects: changes the value of the power saving mode property;
+        sets the value of the maximum temperature property */
     }
 
     const reset() = () => {
