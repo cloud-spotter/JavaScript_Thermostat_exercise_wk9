@@ -19,7 +19,6 @@ You can ask about the thermostat's current energy usage: < 18 is low-usage, <= 2
 _Include the initializer, public properties, and public methods with all parameters, return values, and side-effects._
 
 ```javascript
-# EXAMPLE
 
 class Thermostat {
 // No code here yet
