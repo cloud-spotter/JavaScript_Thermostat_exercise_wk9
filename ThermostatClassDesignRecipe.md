@@ -37,14 +37,12 @@ class Thermostat {
     
     up() {
         // Returns: undefined (side-effect below instead) 
-        /* Side-effects: Changes the value of the temperature property;
-        Throws an exception if temperature is already at maximum */
+        // Side-effects: Changes the value of the temperature property;
     }
 
     down() {
         // Returns: undefined (side-effect below instead) 
-        /* Side-effects: Changes the value of the temperature property;
-        Throws an exception if temperature is already at minimum */
+        // Side-effects: Changes the value of the temperature property;
     }
 
     setPowerSavingMode() {

@@ -1,4 +1,4 @@
-const Thermostat = require('./thermostat.js')
+const Thermostat = require('./thermostat.js');
 
 describe('Thermostat', () => {
     let thermostat;
@@ -32,7 +32,7 @@ describe('Thermostat', () => {
             thermostat.up();
         }
         expect(thermostat.getTemperature()).toBe(25)
-    })
+    });
     // Test #setPowerSavingMode imposes max temp limit if True
     test('#setPowerSavingMode imposes max temp limit of 32, if true', () => {
         thermostat.setPowerSavingMode(false)
@@ -40,10 +40,31 @@ describe('Thermostat', () => {
         for (let tempUp = 0 ; tempUp < 15 ; tempUp++) {
             thermostat.up();
         }
-        console.log(thermostat.temperature)
         expect(thermostat.getTemperature()).toBe(32)
-    })
-
-    // Test temperature property is not directly accessible/alterable outside the class 
-    // Set this after testing other features, so hardcoding can be used in those tests
+    });
+    // Test #up increases temperature past 25 if powerSavingMode(false)
+    test(`#up increases temperature to 26 from 25,
+    if this.powerSavingMode is false`, () => {
+        thermostat.setPowerSavingMode(false)
+        // Increase the temperature 6 times
+        for (let tempUp = 0 ; tempUp < 6 ; tempUp++) {
+            thermostat.up();
+        }
+        expect(thermostat.getTemperature()).toBe(26);
+    });
+    // Test #reset changes the temperature property back to 20
+    test(`#reset sets the temperature property to 20, 
+    as returned by #getTemperature`, () => {
+        thermostat.reset()
+        expect(thermostat.getTemperature()).toBe(20);
+    });
+    // Test #checkEnergyUsage displays appropriate level usage statement
+    test(`#checkEnergyUsage displays "medium-usage" when temperature is 21, 
+    as returned by #getTemperature`, () => {
+        thermostat.up()
+        expect(thermostat.getTemperature()).toBe(21);
+        expect(thermostat.checkEnergyUsage()).toBe('medium-usage')
+    });
 });
+// Decided against testing for private properties - seems quite complex
+// And not necessary to meet acceptance criteria here/test method behaviour

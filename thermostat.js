@@ -12,9 +12,9 @@ class Thermostat {
 
     up() {
         if (this.temperature < this.maximumTemperature) {
-            return this.temperature++;
+            this.temperature++; // Refactored to remove the unnecessary 'return'
         } else {
-            return this.temperature = this.maximumTemperature;
+            this.temperature = this.maximumTemperature;
         } 
     };
 
@@ -24,11 +24,21 @@ class Thermostat {
 
     setPowerSavingMode(on) {
         if (on) {
-            this.maximumTemperature = 25
+            this.maximumTemperature = 25;
         } else {
-            this.maximumTemperature = 32
+            this.maximumTemperature = 32;
         }
-    }
-}
+    };
+    
+    reset() {
+        this.temperature = 20;
+    };
+
+    checkEnergyUsage() {
+        return this.temperature < 18 ? 'low-usage'
+            : this.temperature <= 25 ? 'medium-usage'
+            : 'high-usage'
+    };
+};
 
 module.exports = Thermostat;
