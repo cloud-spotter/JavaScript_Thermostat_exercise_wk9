@@ -19,7 +19,11 @@ class Thermostat {
     };
 
     down() {
-        return this.temperature--;
+        if (this.temperature > this.minimumTemperature) {
+            this.temperature--;
+        } else {
+            this.temperature = this.minimumTemperature;
+        }
     };
 
     setPowerSavingMode(on) {
