@@ -36,13 +36,13 @@ class Thermostat {
     }
     
     up() {
-        // Returns: the new temperature
+        // Returns: undefined (side-effect below instead) 
         /* Side-effects: Changes the value of the temperature property;
         Throws an exception if temperature is already at maximum */
     }
 
     down() {
-        // Returns: the new temperature
+        // Returns: undefined (side-effect below instead) 
         /* Side-effects: Changes the value of the temperature property;
         Throws an exception if temperature is already at minimum */
     }
@@ -50,7 +50,8 @@ class Thermostat {
     setPowerSavingMode() {
         // Returns: undefined
         /* Side-effects: changes the value of the power saving mode property;
-        sets the value of the maximum temperature property */
+        sets the value of the maximum temperature property 
+        and impacts #up method functionality */
     }
 
     reset() {
@@ -72,7 +73,7 @@ _Make a list of examples of how the class will behave in different situations._
 ``` javascript
 // EXAMPLE
 
- thermostat = new Thermostat();
+thermostat = new Thermostat();
 
 thermostat.getTemperature(); // should return 20
 
