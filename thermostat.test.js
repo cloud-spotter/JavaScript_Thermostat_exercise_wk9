@@ -17,7 +17,7 @@ describe('Thermostat', () => {
         thermostat.up();
         expect(thermostat.getTemperature()).toBe(22)
     });
-    // Test #up increases temperature property by one each time
+    // Test #down increases temperature property by one each time
     it(`when down is called once, temperature decreases to 21`, () => {
         thermostat.up();
         thermostat.up();
